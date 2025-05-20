@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router';
 
 const AllPlants = () => {
     const allPlants = useLoaderData();
-    console.log(allPlants);
+    //console.log(allPlants);
     return (
         <div>
             <div className="overflow-x-auto my-20 max-w-7xl mx-auto bg-base-200 border rounded-2xl p-3">

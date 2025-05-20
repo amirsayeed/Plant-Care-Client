@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
+import Swal from 'sweetalert2';
+import MyPlant from './MyPlant';
 
 const MyPlants = () => {
     const myPlants = useLoaderData();
-    console.log(myPlants);
+    //console.log(myPlants);
+    const [plants,setPlants] = useState(myPlants);
+
     return (
         <div>
             <div className="overflow-x-auto my-20 max-w-7xl mx-auto bg-base-200 border rounded-2xl p-3">
@@ -20,34 +24,11 @@ const MyPlants = () => {
                     </thead>
                     <tbody className='text-base font-medium'>
                         {
-                            myPlants.map((plant,idx)=><tr key={plant._id}>
-                        <td>
-                            {idx+1}
-                        </td>
-                        <td>
-                        <div className="flex items-center gap-3">
-                            <div className="avatar">
-                                <div className="mask mask-squircle h-16 w-16">
-                                    <img
-                                    src={plant.image}
-                                    alt="Avatar Tailwind CSS Component" />
-                                </div>
-                            </div>
-                        </div>
-                        </td>
-                        <td>
-                        {plant.name}
-                        </td>
-                        <td>
-                        {plant.category}
-                        </td>
-                        <td>{plant.frequency}</td>
-                        <th>
-                        <Link to={`/updatePlants/${plant._id}`}>
-                            <button className="btn btn-primary btn-sm">Update Plant</button>
-                        </Link>
-                        </th>
-                    </tr>)
+                            plants.map((plant,idx)=><MyPlant key={plant._id} 
+                            idx={idx} 
+                            plant={plant} 
+                            plants={plants}
+                            setPlants={setPlants}/>)
                         }
                     
                     </tbody>

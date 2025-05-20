@@ -1,5 +1,5 @@
 import React from 'react';
-import { data, useLoaderData } from 'react-router';
+import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
 const UpdatePlant = () => {
