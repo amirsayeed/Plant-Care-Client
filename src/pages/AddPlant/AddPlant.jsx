@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const AddPlant = () => {
 
@@ -18,13 +19,20 @@ const AddPlant = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log('after adding',data)
+            if(data.insertedId){
+            console.log('after adding',data);
+            Swal.fire({
+            title: "Plant added successfully",
+            icon: "success",
+            draggable: true
+            });
+            }
         })
     }
 
     return (
         <div>
-            <div className='px-12 md:px-24 py-10'>
+            <div className='px-12 md:px-24 my-20'>
                 <div className='p-12 space-y-3 text-center bg-base-300'>
                     <h3 className="text-3xl font-semibold">Add New Plant</h3>
                     <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
@@ -43,9 +51,9 @@ const AddPlant = () => {
                                 <label className="label">Category</label>
                                 <select defaultValue="Select a category" name='category' className="select w-full">
                                     <option disabled={true}>Select a category</option>
-                                    <option>Succulent</option>
-                                    <option>Fern</option>
-                                    <option>Flowering</option>
+                                    <option value="succulent">Succulent</option>
+                                    <option value="fern">Fern</option>
+                                    <option value="flowering">Flowering</option>
                                 </select>
                             </fieldset>
                             <fieldset className='fieldset rounded-box p-4'>
@@ -56,10 +64,14 @@ const AddPlant = () => {
                                 <label className="label">Care Level</label>
                                 <select defaultValue="Select a level" name='care' className="select w-full">
                                     <option disabled={true}>Select a level</option>
-                                    <option>Easy</option>
-                                    <option>Moderate</option>
-                                    <option>Difficult</option>
+                                    <option value="easy">Easy</option>
+                                    <option value="moderate">Moderate</option>
+                                    <option value="difficult">Difficult</option>
                                 </select>
+                            </fieldset>
+                            <fieldset className='fieldset rounded-box p-4'>
+                                <label className="label">Watering Frequency</label>
+                                <input type="text" name='frequency' className="input w-full" placeholder="Watering Frequency" />
                             </fieldset>
                             <fieldset className='fieldset rounded-box p-4'>
                                 <label className="label">Last Watered Date</label>
