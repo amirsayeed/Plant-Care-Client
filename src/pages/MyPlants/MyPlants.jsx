@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLoaderData } from 'react-router';
-import Swal from 'sweetalert2';
+import { useLoaderData } from 'react-router';
 import MyPlant from './MyPlant';
 
 const MyPlants = () => {

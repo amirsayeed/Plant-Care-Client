@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { use } from 'react';
 import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../provider/AuthContext';
 
 const UpdatePlant = () => {
     const {_id,name,image,description,care,category,frequency,status,last,next} = useLoaderData();
+    const {user} = use(AuthContext);
     
     const handleUpdatePlant = e =>{
         
@@ -93,11 +95,11 @@ const UpdatePlant = () => {
                             </fieldset>
                             <fieldset className='fieldset rounded-box p-4'>
                                 <label className="label">User Email</label>
-                                <input type="email" name='email' className="input w-full" placeholder="Email" disabled />
+                                <input type="email" name='uemail' defaultValue={user.email} className="input w-full" placeholder="Email" readOnly />
                             </fieldset>
                             <fieldset className='fieldset rounded-box p-4'>
                                 <label className="label">User Name</label>
-                                <input type="text" name='uname' className="input w-full" placeholder="User Name" disabled/>
+                                <input type="text" name='uname' defaultValue={user.displayName} className="input w-full" placeholder="User Name" readOnly/>
                             </fieldset>
                         </div>
                         <div className='p-4'>

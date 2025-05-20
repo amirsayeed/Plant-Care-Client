@@ -1,7 +1,21 @@
-import React from 'react';
+import React, {use} from 'react';
 import { Link } from 'react-router';
+import { AuthContext } from '../../provider/AuthContext';
+import { FaUserCircle } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
+    const {user,logOut} = use(AuthContext);
+
+    const handleLogOut = () =>{
+        logOut().then(()=>{
+            toast.success('Successfully logged out');
+        })
+        .catch(error=>{
+            toast.error(error.message);
+        })
+    }
+
     const links = <>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/plants'>All Plants</Link></li>
@@ -28,9 +42,18 @@ const Navbar = () => {
                 {links}
             </ul>
         </div>
-        <div className="navbar-end gap-2">
-            <Link to='/auth/login' className="btn btn-primary">Login</Link>
-            <Link to='/auth/register' className="btn btn-primary">Register</Link>
+        <div className="navbar-end ">
+             {user ? 
+                <div className='flex gap-2'>
+                    <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+                        {user?.photoURL ? <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" /> : <FaUserCircle size={40} />}
+                    </div> 
+                    <button onClick={handleLogOut} className='btn btn-primary'>Logout</button>
+                </div> :
+                <div className='flex gap-2'>
+                    <Link to='/auth/login' className="btn btn-primary">Login</Link>
+                    <Link to='/auth/register' className="btn btn-primary">Register</Link>
+                </div>}
         </div>
         </div>
     );

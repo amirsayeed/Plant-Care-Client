@@ -6,7 +6,7 @@ import { AuthContext } from '../../provider/AuthContext';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const {signUp,googleSignIn,setUser} = use(AuthContext);
+    const {signUp,googleSignIn,setUser,updateUser} = use(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
@@ -26,9 +26,18 @@ const Register = () => {
         }
 
         signUp(email,password).then(result=>{
-            setUser(result.user);
+            const user = result.user;
+            
+            updateUser({ displayName: name, photoURL: photo })
+            .then(()=>{
+            setUser({...user, displayName: name, photoURL: photo});
             toast.success("Registration successful!");
             navigate('/');
+            })
+            .catch(error=>{
+                toast.error(error);
+                setUser(user);
+            })
         })
         .catch(error=>{
             console.log(error);
