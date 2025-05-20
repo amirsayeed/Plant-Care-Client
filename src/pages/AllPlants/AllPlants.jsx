@@ -1,12 +1,12 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const AllPlants = () => {
     const allPlants = useLoaderData();
     console.log(allPlants);
     return (
         <div>
-            <div className="overflow-x-auto my-20 max-w-7xl mx-auto">
+            <div className="overflow-x-auto my-20 max-w-7xl mx-auto bg-base-200 border rounded-2xl p-3">
                 <table className="table">
                     <thead className='text-lg font-bold'>
                     <tr>
@@ -15,7 +15,7 @@ const AllPlants = () => {
                         <th>Name</th>
                         <th>Category</th>
                         <th>Watering Frequency</th>
-                        <th>Details</th>
+                        <th>Plant Details</th>
                     </tr>
                     </thead>
                     <tbody className='text-base font-medium'>
@@ -43,7 +43,9 @@ const AllPlants = () => {
                         </td>
                         <td>{plant.frequency}</td>
                         <th>
-                        <button className="btn btn-primary btn-sm">View details</button>
+                        <Link to={`/plants/${plant._id}`}>
+                            <button className="btn btn-primary btn-sm">View details</button>
+                        </Link>
                         </th>
                     </tr>)
                         }
