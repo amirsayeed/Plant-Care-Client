@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router';
 
-const AllPlants = () => {
-    const allPlants = useLoaderData();
-    console.log(allPlants);
+const MyPlants = () => {
+    const myPlants = useLoaderData();
+    console.log(myPlants);
     return (
         <div>
             <div className="overflow-x-auto my-20 max-w-7xl mx-auto bg-base-200 border rounded-2xl p-3">
@@ -20,7 +20,7 @@ const AllPlants = () => {
                     </thead>
                     <tbody className='text-base font-medium'>
                         {
-                            allPlants.map((plant,idx)=><tr key={plant._id}>
+                            myPlants.map((plant,idx)=><tr key={plant._id}>
                         <td>
                             {idx+1}
                         </td>
@@ -43,8 +43,8 @@ const AllPlants = () => {
                         </td>
                         <td>{plant.frequency}</td>
                         <th>
-                        <Link to={`/plants/${plant._id}`}>
-                            <button className="btn btn-primary btn-sm">View details</button>
+                        <Link to={`/updatePlants/${plant._id}`}>
+                            <button className="btn btn-primary btn-sm">Update Plant</button>
                         </Link>
                         </th>
                     </tr>)
@@ -57,4 +57,4 @@ const AllPlants = () => {
     );
 };
 
-export default AllPlants;
+export default MyPlants;
