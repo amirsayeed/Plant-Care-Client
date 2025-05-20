@@ -9,6 +9,9 @@ import Loading from "../components/Loading/Loading";
 import PlantDetails from "../pages/PlantDetails/PlantDetails";
 import UpdatePlant from "../pages/UpdatePlant/UpdatePlant";
 import MyPlants from "../pages/MyPlants/MyPlants";
+import AuthLayout from "../layouts/AuthLayout";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 export const router = createBrowserRouter([
   {
@@ -49,4 +52,18 @@ export const router = createBrowserRouter([
         }
     ]
   },
+  {
+      path: '/auth',
+      Component: AuthLayout,
+      children: [
+        {
+            path: '/auth/login',
+            Component: Login
+        },
+        {
+            path: '/auth/register',
+            Component: Register
+        }
+      ]
+  }
 ]);
