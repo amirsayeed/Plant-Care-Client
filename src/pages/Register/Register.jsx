@@ -1,16 +1,51 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../../provider/AuthContext';
+import { toast } from 'react-toastify';
 
 const Register = () => {
+    const {signUp,googleSignIn,setUser} = use(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+
     const handleRegister = e =>{
         e.preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.photo.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        //console.log(email,password,name,photo);
+
+        const passRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        if(!passRegex.test(password)){
+            const msg = 'Password must contain at least one uppercase letter, one lowercase letter and be at least 6 characters long.';
+            toast.error(msg);
+            return;
+        }
+
+        signUp(email,password).then(result=>{
+            setUser(result.user);
+            toast.success("Registration successful!");
+            navigate('/');
+        })
+        .catch(error=>{
+            console.log(error);
+            toast.error(error.message);
+        })
     }
 
     const handleGoogleLogin = () =>{
-
+        googleSignIn().then(result=>{
+            setUser(result.user);
+            toast.success("Registration successful!");
+            navigate('/');
+        })
+        .catch(error=>{
+            console.log(error);
+            toast(error.message);
+        })
     }
 
     return (

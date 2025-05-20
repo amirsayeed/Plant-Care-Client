@@ -1,14 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../../provider/AuthContext';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    const {signIn,googleSignIn,setUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+
     const handleLogin = e =>{
         e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        //console.log(email,password);
+
+        signIn(email,password).then(result=>{
+            setUser(result.user);
+            toast.success('Login successful');
+            navigate('/');
+        })
+        .catch(error=>{
+            console.log(error);
+            toast.error(error.message);
+        })
     }
 
     const handleGoogleLogin = () =>{
-
+        googleSignIn().then(result=>{
+            setUser(result.user);
+            navigate('/');
+            toast.success('Login successful');
+        })
+        .catch(error=>{
+            console.log(error);
+            toast.error(error.message);
+        })
     }
 
     return (
