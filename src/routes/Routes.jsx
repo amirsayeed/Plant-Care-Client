@@ -12,11 +12,14 @@ import MyPlants from "../pages/MyPlants/MyPlants";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "../provider/PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/>,
+    errorElement: <ErrorPage/>,
     children: [
         {
             index: true,
@@ -24,7 +27,7 @@ export const router = createBrowserRouter([
         },
         {
             path: 'addPlant',
-            Component: AddPlant
+            element: <PrivateRoute><AddPlant/></PrivateRoute>
         },
         {
           path: 'plants',
@@ -36,13 +39,13 @@ export const router = createBrowserRouter([
           path: 'plants/:id',
           loader: ({params})=> fetch(`http://localhost:5000/plants/${params.id}`),
           hydrateFallbackElement: <Loading/>,
-          Component: PlantDetails
+          element: <PrivateRoute><PlantDetails/></PrivateRoute>
         },
         {
           path: 'myPlants',
           loader: ()=> fetch(`http://localhost:5000/plants`),
           hydrateFallbackElement: <Loading/>,
-          Component: MyPlants
+          element: <PrivateRoute><MyPlants/></PrivateRoute>
         },
         {
           path: 'updatePlants/:id',
@@ -55,6 +58,7 @@ export const router = createBrowserRouter([
   {
       path: '/auth',
       Component: AuthLayout,
+      errorElement: <ErrorPage/>,
       children: [
         {
             path: '/auth/login',
