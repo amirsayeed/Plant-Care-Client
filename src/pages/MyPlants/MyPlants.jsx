@@ -1,15 +1,29 @@
-import React, { useState } from 'react';
-import { useLoaderData } from 'react-router';
+import React, { useContext, useEffect, useState } from 'react';
+// import { useLoaderData } from 'react-router';
 import MyPlant from './MyPlant';
+import { AuthContext } from '../../provider/AuthContext';
 
 const MyPlants = () => {
-    const myPlants = useLoaderData();
-    //console.log(myPlants);
-    const [plants,setPlants] = useState(myPlants);
+    const {user} = useContext(AuthContext);
+    const [plants,setPlants] = useState([]);
 
+    useEffect(()=>{
+        fetch('http://localhost:5000/plants')
+        .then(res=>res.json())
+        .then(data => {
+            const userPlants = data.filter(plnt=> plnt.uemail === user.email);
+            setPlants(userPlants);
+        })
+    },[user?.email])
+
+    
     return (
         <div>
-            <div className="overflow-x-auto my-20 max-w-7xl mx-auto bg-base-200 border rounded-2xl p-3">
+            {plants.length === 0 ? (
+                <div className="flex items-center justify-center my-20 text-3xl font-bold">
+                    <h3>No plants added yet</h3>
+                </div> ) : (
+                <div className="overflow-x-auto my-20 max-w-7xl mx-auto bg-base-200 border rounded-2xl p-3">
                 <table className="table">
                     <thead className='text-lg font-bold'>
                     <tr>
@@ -29,10 +43,11 @@ const MyPlants = () => {
                             plants={plants}
                             setPlants={setPlants}/>)
                         }
-                    
+                        
                     </tbody>
                 </table>
-            </div>
+            </div>)
+            }   
         </div>
     );
 };

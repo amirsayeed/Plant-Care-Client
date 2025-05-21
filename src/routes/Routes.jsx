@@ -43,12 +43,10 @@ export const router = createBrowserRouter([
         },
         {
           path: 'myPlants',
-          loader: ()=> fetch(`http://localhost:5000/plants`),
-          hydrateFallbackElement: <Loading/>,
           element: <PrivateRoute><MyPlants/></PrivateRoute>
         },
         {
-          path: 'updatePlants/:id',
+          path: '/updatePlants/:id',
           loader: ({params})=> fetch(`http://localhost:5000/plants/${params.id}`),
           hydrateFallbackElement: <Loading/>,
           Component: UpdatePlant

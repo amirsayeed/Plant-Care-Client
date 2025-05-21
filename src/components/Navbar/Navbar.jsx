@@ -1,5 +1,5 @@
 import React, {use} from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../provider/AuthContext';
 import { FaUserCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
@@ -17,10 +17,10 @@ const Navbar = () => {
     }
 
     const links = <>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/plants'>All Plants</Link></li>
-                    <li><Link to='/addPlant'>Add Plant</Link></li>
-                    <li><Link to='/myPlants'>My Plants</Link></li>
+                    <li><NavLink to='/'>Home</NavLink></li>
+                    <li><NavLink to='/plants'>All Plants</NavLink></li>
+                    <li><NavLink to='/addPlant'>Add Plant</NavLink></li>
+                    <li><NavLink to='/myPlants'>My Plants</NavLink></li>
                   </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -31,14 +31,14 @@ const Navbar = () => {
             </div>
             <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-lg font-medium">
                 {links}
             </ul>
             </div>
             <a className="btn btn-ghost text-xl">Plant Care</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu menu-horizontal px-1 text-lg font-medium">
                 {links}
             </ul>
         </div>
