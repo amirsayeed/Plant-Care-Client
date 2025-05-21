@@ -6,13 +6,13 @@ const PlantDetails = () => {
     
     return (
         <div className='max-w-4xl mx-auto my-20'>
-            <div className="flex flex-col md:flex-row items-center justify-center bg-base-300 shadow-sm p-5 gap-4 rounded-2xl">
+            <div className="flex flex-col md:flex-row items-start justify-center bg-base-300 shadow-sm p-5 gap-4 rounded-2xl">
             <figure className='max-w-sm'>
                 <img className='rounded-3xl object-cover'
                 src={image}
                 alt="Album" />
             </figure>
-            <div className="space-y-3">
+            <div className="space-y-4">
                 <h2 className="text-lg font-bold">Name: <span className='font-medium'>{name}</span></h2>
                 <p className='text-lg font-bold'>Description : <span className='font-medium'>{description}</span></p>
                 <p className='text-lg font-bold'>Category : <span className='font-medium'>{category}</span></p>
