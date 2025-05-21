@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import { format } from 'date-fns';
-import { DiDart } from 'react-icons/di';
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
+import { Tooltip } from 'react-tooltip'
 
 const AllPlants = () => {
     const allPlants = useLoaderData();
@@ -34,8 +34,13 @@ const AllPlants = () => {
                             <div className='flex items-center'>
                                 Next Watering Date
                                 <div className='flex flex-col gap-1'>
-                                    <span onClick={handleAscSort}><IoMdArrowDropup size={20} /></span>
-                                    <span onClick={handleDescSort}><IoMdArrowDropdown size={20} /></span>
+                                    <span data-tooltip-id="asc-tooltip"
+                                    data-tooltip-content="Earliest Date"
+                                    onClick={handleAscSort}><IoMdArrowDropup size={20} /></span>
+                                    <span data-tooltip-id="desc-tooltip"
+                                    data-tooltip-content="Latest Date" onClick={handleDescSort}><IoMdArrowDropdown size={20} /></span>
+                                    <Tooltip id="asc-tooltip" place='right' />
+                                    <Tooltip id="desc-tooltip" place='right' />
                                 </div>
                             </div>
                             
@@ -70,7 +75,9 @@ const AllPlants = () => {
                         <td>{format(new Date(plant.next), 'MMM dd, yyyy')}</td>
                         <th>
                         <Link to={`/plants/${plant._id}`}>
-                            <button className="btn btn-primary btn-sm">View details</button>
+                            <button data-tooltip-id="view-tooltip"
+                            data-tooltip-content="Click to see details" className="btn btn-primary btn-sm">View details</button>
+                            <Tooltip id="view-tooltip" place='top'/>
                         </Link>
                         </th>
                     </tr>)

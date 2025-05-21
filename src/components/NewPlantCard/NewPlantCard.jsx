@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import { Tooltip } from 'react-tooltip'
 const NewPlantCard = ({newPlant}) => {
     const {_id,name,image} = newPlant;
     return (
@@ -15,7 +15,9 @@ const NewPlantCard = ({newPlant}) => {
                 <h2 className="text-lg font-bold text-center">Name: {name}</h2>
                 <div className="card-actions justify-center">
                 <Link to={`/plants/${_id}`}>
-                    <button className="btn btn-primary">View Details</button>
+                    <button data-tooltip-id="view-tooltip"
+                        data-tooltip-content="Click to see details" className="btn btn-primary">View Details</button>
+                    <Tooltip id="view-tooltip" place='top'/>
                 </Link>
                 
                 </div>
