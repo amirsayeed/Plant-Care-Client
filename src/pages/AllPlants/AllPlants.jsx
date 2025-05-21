@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
+import { format } from 'date-fns';
+import { DiDart } from 'react-icons/di';
+import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 
 const AllPlants = () => {
     const allPlants = useLoaderData();
     //console.log(allPlants);
+    const [nextDate, setNextDate] = useState(allPlants);
+
+    const handleDescSort = () => {
+        const lateDate = [...allPlants].sort((a,b)=> new Date(b.next) - new Date(a.next));
+        setNextDate(lateDate);
+    }
+
+    const handleAscSort = () => {
+        const earliestDate = [...allPlants].sort((a,b)=> new Date(a.next) - new Date(b.next));
+        setNextDate(earliestDate);
+    }
+
     return (
         <div>
             <div className="overflow-x-auto my-20 max-w-7xl mx-auto bg-base-200 border rounded-2xl p-3">
@@ -15,12 +30,22 @@ const AllPlants = () => {
                         <th>Name</th>
                         <th>Category</th>
                         <th>Watering Frequency</th>
+                        <th>
+                            <div className='flex items-center'>
+                                Next Watering Date
+                                <div className='flex flex-col gap-1'>
+                                    <span onClick={handleAscSort}><IoMdArrowDropup size={20} /></span>
+                                    <span onClick={handleDescSort}><IoMdArrowDropdown size={20} /></span>
+                                </div>
+                            </div>
+                            
+                        </th>
                         <th>Plant Details</th>
                     </tr>
                     </thead>
                     <tbody className='text-base font-medium'>
                         {
-                            allPlants.map((plant,idx)=><tr key={plant._id}>
+                            nextDate.map((plant,idx)=><tr key={plant._id}>
                         <td>
                             {idx+1}
                         </td>
@@ -42,6 +67,7 @@ const AllPlants = () => {
                         {plant.category}
                         </td>
                         <td>{plant.frequency}</td>
+                        <td>{format(new Date(plant.next), 'MMM dd, yyyy')}</td>
                         <th>
                         <Link to={`/plants/${plant._id}`}>
                             <button className="btn btn-primary btn-sm">View details</button>
