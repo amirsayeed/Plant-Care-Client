@@ -21,7 +21,11 @@ const AllPlants = () => {
 
     return (
         <div>
-            <div className="overflow-x-auto my-20 max-w-7xl mx-auto bg-base-200 border rounded-2xl p-3">
+            <div className='my-10 text-center space-y-4'>
+                <h2 className="font-bold text-3xl">All Plants at a Glance</h2>
+                <p className="text-lg font-medium italic">From roots to routine—everything logged, everything loved</p>
+            </div>
+            <div className="overflow-x-auto mt-10 mb-20 max-w-7xl mx-auto bg-base-200 border rounded-2xl p-3">
                 <table className="table">
                     <thead className='text-lg font-bold'>
                     <tr>

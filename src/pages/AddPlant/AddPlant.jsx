@@ -34,9 +34,9 @@ const AddPlant = () => {
     return (
         <div>
             <div className='px-12 md:px-24 my-20'>
-                <div className='p-12 space-y-3 text-center bg-base-300'>
+                <div className='p-12 space-y-4 text-center bg-base-300'>
                     <h3 className="text-3xl font-semibold">Add New Plant</h3>
-                    <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                    <p className='text-lg font-medium italic'>Every plant has a story — let’s begin yours</p>
 
                     <form onSubmit={handleAddPlant} className='fieldset'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>

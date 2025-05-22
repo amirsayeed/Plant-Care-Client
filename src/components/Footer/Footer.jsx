@@ -11,7 +11,7 @@ const Footer = () => {
             <aside>
                 <img className='w-12 h-12 object-cover' src={plantLogo} alt="subscription"/>
                 <h2 className='text-2xl font-bold'>
-                    Plant Care Tracker
+                    Plant Care
                 </h2>
             </aside>
             <nav>
@@ -54,7 +54,7 @@ const Footer = () => {
         </footer>
         <footer className="footer sm:footer-horizontal border-t border-dashed footer-center bg-neutral text-neutral-content p-5">
         <aside>
-            <p>Copyright © {new Date().getFullYear()} - All right reserved by Plant Care Tracker</p>
+            <p>Copyright © {new Date().getFullYear()} - All right reserved by Plant Care</p>
         </aside>
         </footer>
         </>
