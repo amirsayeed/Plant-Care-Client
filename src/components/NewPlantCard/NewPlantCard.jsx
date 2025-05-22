@@ -12,7 +12,7 @@ const NewPlantCard = ({newPlant}) => {
                 alt="Shoes" />
             </figure>
             <div className="card-body space-y-3">
-                <h2 className="text-lg font-bold text-center">Name: {name}</h2>
+                <h2 className="text-lg font-semibold text-center">Name: {name}</h2>
                 <div className="card-actions justify-center">
                 <Link to={`/plants/${_id}`}>
                     <button data-tooltip-id="view-tooltip"

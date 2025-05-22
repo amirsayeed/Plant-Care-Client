@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from '../../components/Slider/Slider';
 import { useLoaderData } from 'react-router';
 import NewPlantCard from '../../components/NewPlantCard/NewPlantCard';
+import TrackingReasons from '../../components/TrackingReasons/TrackingReasons';
 const Home = () => {
     const allPlants = useLoaderData();
     const newAddedPlants = [...allPlants].reverse();
@@ -22,6 +23,8 @@ const Home = () => {
                     }
                 </div>
             </div>
+
+            <TrackingReasons/>
             
         </div>
     );
