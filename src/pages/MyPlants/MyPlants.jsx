@@ -20,8 +20,8 @@ const MyPlants = () => {
     return (
         <div>
             <div className='text-center space-y-3 my-10'>
-                <h2 className="font-bold text-3xl">Your Green Space</h2>
-                <p className="font-medium text-lg italic">All the plants you've added—tracked, listed and thriving</p>
+                <h2 className="font-bold text-2xl md:text-3xl">Your Green Space</h2>
+                <p className="font-medium text-base md:text-lg italic">All the plants you've added—tracked, listed and thriving</p>
             </div>
             {plants.length === 0 ? (
                 <div className="flex items-center justify-center mt-10 mb-20 text-2xl font-bold">

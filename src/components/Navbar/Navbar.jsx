@@ -35,6 +35,7 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-lg font-medium">
                 {links}
             </ul>
+            
             </div>
             <div className='flex gap-1 items-center'>
                 <img className='hidden md:flex w-12 h-10 object-cover' src={navLogo} alt="" />

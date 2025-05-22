@@ -7,8 +7,8 @@ const PlantDetails = () => {
     return (
         <div>
             <div className='text-center space-y-3 mt-10'>
-                <h2 className="text-3xl font-bold">Plant Details</h2>
-                <p className="font-medium text-lg italic">Track health, habits, and happiness—plant by plant.</p>
+                <h2 className="text-2xl md:text-3xl font-bold">Plant Details</h2>
+                <p className="font-medium text-base md:text-lg italic">Track health, habits, and happiness—plant by plant.</p>
             </div>
             <div className='max-w-4xl mx-auto mt-10 mb-20'>
                 <div className="flex flex-col md:flex-row items-start justify-center bg-base-300 shadow-sm p-5 gap-4 rounded-2xl">

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/zWfcPD5c/icons8-flowerpot-53.png",
+    "name": "Basic Gardening Tools",
+    "description": "A watering can, pruning shears, hand trowel, and spray bottle form the foundation of any plant care routine."
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/LdWGy0tq/icons8-soil-48.png",
+    "name": "Quality Soil & Potting Mix",
+    "description": "The right soil retains moisture, drains well, and supports root growth. Choose mixes based on plant type—succulent, tropical, or flowering."
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/NnpFq3M0/icons8-drop-48.png",
+    "name": "Moisture & Light Meters",
+    "description": "Use simple tools to monitor soil moisture and sunlight exposure. Prevent overwatering and ensure each plant gets what it needs."
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/8LtqRWGT/icons8-temperature-48.png",
+    "name": "Environment Control",
+    "description": "Humidity trays, grow lights, and temperature gauges help recreate ideal conditions for plants, especially indoors or in varying seasons."
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/DfwV8CDQ/icons8-fertilizer-50.png",
+    "name": "Fertilizers & Nutrients",
+    "description": "Feed your plants with balanced or specialty fertilizers. Know when and how often to fertilize to avoid burn or deficiency."
+  },
+  {
+    "id": 6,
+    "img": "https://i.ibb.co/Mk3Yk806/icons8-pest-control-50.png",
+    "name": "Pest & Disease Control",
+    "description": "Protect your plants from common threats like aphids, fungus, and root rot using natural remedies or plant-safe sprays. Early detection is key."
+  }
+]

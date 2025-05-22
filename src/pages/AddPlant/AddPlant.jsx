@@ -35,8 +35,8 @@ const AddPlant = () => {
         <div>
             <div className='px-12 md:px-24 my-20'>
                 <div className='p-12 space-y-4 text-center bg-base-300'>
-                    <h3 className="text-3xl font-semibold">Add New Plant</h3>
-                    <p className='text-lg font-medium italic'>Every plant has a story — let’s begin yours</p>
+                    <h3 className="text-2xl md:text-3xl font-semibold">Add New Plant</h3>
+                    <p className='text-base md:text-lg font-medium italic'>Every plant has a story — let’s begin yours</p>
 
                     <form onSubmit={handleAddPlant} className='fieldset'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -96,7 +96,7 @@ const AddPlant = () => {
                             </fieldset>
                         </div>
                         <div className='p-4'>
-                            <input type='submit' className='btn w-full bg-[#D2B48C]' value='Add Plant'/>
+                            <input type='submit' className='btn w-full btn-primary' value='Add Plant'/>
                         </div>
                     </form>
                 </div>

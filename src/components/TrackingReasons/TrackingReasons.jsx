@@ -8,10 +8,10 @@ const TrackingReasons = () => {
     return (
         <div className='my-20'>
             <div className='space-y-4 text-center'>
-                <h2 className="font-bold text-3xl"> Why Plant Care Tracking Matters</h2>
-                <p className="font-medium text-lg italic">Stay consistent. Grow better. Let your plants thrive</p>
+                <h2 className="font-bold text-2xl md:text-3xl"> Why Plant Care Tracking Matters</h2>
+                <p className="font-medium text-base md:text-lg italic">Stay consistent. Grow better. Let your plants thrive</p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-5 p-10 bg-gray-300 mt-10 rounded-2xl'>
+            <div className='grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-5 p-10 bg-base-300 mt-10 rounded-2xl'>
                 <div className='flex flex-col gap-3'>
                     <IoTimeOutline size={40}/>
                     <h3 className='font-bold text-xl'>Timely Watering</h3>

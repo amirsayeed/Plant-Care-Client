@@ -3,10 +3,11 @@ import Slider from '../../components/Slider/Slider';
 import { useLoaderData } from 'react-router';
 import NewPlantCard from '../../components/NewPlantCard/NewPlantCard';
 import TrackingReasons from '../../components/TrackingReasons/TrackingReasons';
+import EfficientCare from '../../components/EfficientCare/EfficientCare';
 const Home = () => {
     const allPlants = useLoaderData();
     const newAddedPlants = [...allPlants].reverse();
-    console.log(newAddedPlants);
+    //console.log(newAddedPlants);
 
     return (
         <div>
@@ -25,7 +26,7 @@ const Home = () => {
             </div>
 
             <TrackingReasons/>
-            
+            <EfficientCare/>
         </div>
     );
 };
