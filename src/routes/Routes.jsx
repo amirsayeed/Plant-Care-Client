@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
     children: [
         {
             index: true,
-            loader: ()=> fetch('http://localhost:5000/plants'),
+            loader: ()=> fetch('https://plant-care-tracker-server-pied.vercel.app/plants'),
             hydrateFallbackElement: <Loading/>,
             Component: Home
         },
@@ -33,13 +33,13 @@ export const router = createBrowserRouter([
         },
         {
           path: 'plants',
-          loader: ()=> fetch('http://localhost:5000/plants'),
+          loader: ()=> fetch('https://plant-care-tracker-server-pied.vercel.app/plants'),
           hydrateFallbackElement: <Loading/>,
           Component: AllPlants
         },
         {
           path: 'plants/:id',
-          loader: ({params})=> fetch(`http://localhost:5000/plants/${params.id}`),
+          loader: ({params})=> fetch(`https://plant-care-tracker-server-pied.vercel.app/plants/${params.id}`),
           hydrateFallbackElement: <Loading/>,
           element: <PrivateRoute><PlantDetails/></PrivateRoute>
         },
@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
         },
         {
           path: '/updatePlants/:id',
-          loader: ({params})=> fetch(`http://localhost:5000/plants/${params.id}`),
+          loader: ({params})=> fetch(`https://plant-care-tracker-server-pied.vercel.app/plants/${params.id}`),
           hydrateFallbackElement: <Loading/>,
           Component: UpdatePlant
         }

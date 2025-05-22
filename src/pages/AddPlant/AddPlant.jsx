@@ -11,7 +11,7 @@ const AddPlant = () => {
         const plantData = Object.fromEntries(formData.entries());
         console.log(plantData);
 
-        fetch('http://localhost:5000/plants',{
+        fetch('https://plant-care-tracker-server-pied.vercel.app/plants',{
             method: "POST",
             headers: {
                 'content-type': 'application/json'

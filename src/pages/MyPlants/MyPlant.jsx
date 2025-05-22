@@ -19,7 +19,7 @@ const MyPlant = ({plant,idx,plants,setPlants}) => {
         }).then((result) => {
         console.log(result.isConfirmed);
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/plants/${_id}`,{
+            fetch(`https://plant-care-tracker-server-pied.vercel.app/plants/${_id}`,{
                 method: "DELETE"
             })
             .then(res=>res.json())

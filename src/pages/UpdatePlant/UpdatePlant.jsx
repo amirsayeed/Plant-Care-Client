@@ -15,7 +15,7 @@ const UpdatePlant = () => {
         const updatedPlant = Object.fromEntries(formData.entries());
         console.log(updatedPlant);
 
-        fetch(`http://localhost:5000/plants/${_id}`,{
+        fetch(`https://plant-care-tracker-server-pied.vercel.app/plants/${_id}`,{
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

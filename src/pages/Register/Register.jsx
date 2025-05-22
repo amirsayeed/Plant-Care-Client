@@ -63,7 +63,7 @@ const Register = () => {
             <h1 className="my-3 text-4xl font-bold text-center">Register</h1>
                 
             <form onSubmit={handleRegister} className="fieldset">
-                <label className="text-sm">Name</label>
+                <label className="text-sm">Name*</label>
                 <input type="text" name="name" id="name" placeholder="Enter your name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" required/>
 
                 <label className="text-sm mt-2">Photo URL</label>

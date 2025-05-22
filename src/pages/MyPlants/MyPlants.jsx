@@ -8,7 +8,7 @@ const MyPlants = () => {
     const [plants,setPlants] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/plants')
+        fetch('https://plant-care-tracker-server-pied.vercel.app/plants')
         .then(res=>res.json())
         .then(data => {
             const userPlants = data.filter(plnt=> plnt.uemail === user.email);
