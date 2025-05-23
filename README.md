@@ -1,12 +1,65 @@
-# React + Vite
+# 🌱 Plant Care 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack, mobile-responsive web application designed to help users manage and monitor the care of their indoor and outdoor plants. Built with React, Tailwind CSS, Express, MongoDB, and Firebase.
 
-Currently, two official plugins are available:
+## 🔗 Live Links
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌐 [Live Site](https://plant-care-tracker-6b11a.web.app/)
+- 🛠️ [Server API](https://plant-care-tracker-server-pied.vercel.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Tech Stack
+
+**Frontend:**
+- ReactJS
+- React Router
+- Tailwind CSS
+- DaisyUI
+- Firebase Authentication
+- Firebase Hosting
+
+**Backend:**
+- ExpressJS
+- MongoDB
+- Vercel
+
+**Packages & Tools:**
+- sweetalert2
+- react-toastify
+- date-fns
+- react-tooltip
+- react-icons
+- dotenv
+
+---
+
+## ✨ Core Features
+
+- 🔐 Auth with email/password & Google (with validation)
+- 🪴 Add, view, edit, and delete personal plants
+- 📊 Sortable plant lists by next watering date
+- 🎨 Light/Dark theme toggle
+- ✅ Styled feedback (toasts/alerts), tooltips & spinners
+- 📱 Fully responsive design
+- ❌ Custom 404 and route protection
+
+---
+
+## 📄 Main Pages
+
+- **Home**: Banner, featured plants, tips
+- **All Plants**: Public plant list with sorting
+- **Add/View/Update Plant**: Auth-only CRUD pages
+- **My Plants**: User’s own plant records
+- **404**: Custom not found page
+
+---
+
+## 🔐 Environment
+
+All sensitive credentials are managed via `.env` files and excluded from the codebase.
+
+---
+
+
