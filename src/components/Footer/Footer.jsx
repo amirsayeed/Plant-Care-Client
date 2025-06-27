@@ -1,5 +1,5 @@
 import React from 'react';
-import plantLogo from '../../assets/premium-download-icon-of-indoor-plant-vector.jpg' 
+import plantLogo from '../../assets/logo.png' 
 import { BsFacebook } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";

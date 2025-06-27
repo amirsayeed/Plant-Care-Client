@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../provider/AuthContext';
 import { FaUserCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import navLogo from '../../assets/premium-download-icon-of-indoor-plant-vector.jpg'
+import navLogo from '../../assets/logo.png'
 
 const Navbar = () => {
     const {user,logOut} = use(AuthContext);
@@ -24,7 +24,7 @@ const Navbar = () => {
                     <li><NavLink to='/myPlants'>My Plants</NavLink></li>
                   </>
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm lg:px-3">
         <div className="navbar-start">
             <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -76,8 +76,8 @@ const Navbar = () => {
                     <button onClick={handleLogOut} className='btn btn-primary'>Logout</button>
                 </div> :
                 <div className='flex gap-2'>
-                    <Link to='/auth/login' className="btn btn-primary">Login</Link>
-                    <Link to='/auth/register' className="btn btn-primary">Register</Link>
+                    <Link to='/auth/login' className="btn btn-primary p-2 text-sm rounded-md">Login</Link>
+                    <Link to='/auth/register' className="btn btn-primary p-2 text-sm rounded-md">Register</Link>
                 </div>}
         </div>
         </div>
