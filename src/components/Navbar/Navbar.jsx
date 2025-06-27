@@ -20,8 +20,6 @@ const Navbar = () => {
     const links = <>
                     <li><NavLink to='/'>Home</NavLink></li>
                     <li><NavLink to='/plants'>All Plants</NavLink></li>
-                    <li><NavLink to='/addPlant'>Add Plant</NavLink></li>
-                    <li><NavLink to='/myPlants'>My Plants</NavLink></li>
                   </>
     return (
         <div className="navbar sticky top-0 z-50 bg-base-100 shadow-sm lg:px-3">
@@ -69,16 +67,44 @@ const Navbar = () => {
                 </label>
             </div>
              {user ? 
-                <div className='flex gap-2'>
-                    <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
-                        {user?.photoURL ? <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" /> : <FaUserCircle size={40} />}
-                    </div> 
-                    <button onClick={handleLogOut} className='btn btn-primary'>Logout</button>
-                </div> :
-                <div className='flex gap-2'>
+                 (<div className="dropdown dropdown-end">
+                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                        {user.photoURL ? (
+                            <img src={user.photoURL} alt={user.displayName} />
+                        ) : (
+                            <FaUserCircle size={40} className="text-gray-400" />
+                        )}
+                        </div>
+                    </div>
+                    <ul
+                        tabIndex={0}
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
+                    >
+                        <li className="cursor-default select-none font-semibold px-4 py-2">
+                        {user.displayName}
+                        </li>
+                        <li>
+                        <NavLink to="/dashboard" className="justify-between" tabIndex={-1}>
+                            My Dashboard
+                        </NavLink>
+                        </li>
+                        <li>
+                        <button
+                            onClick={handleLogOut}
+                            className="w-full text-left"
+                            tabIndex={-1}
+                        >
+                            Logout
+                        </button>
+                        </li>
+                    </ul>
+                    </div>
+                ) :
+                (<div className='flex gap-2'>
                     <Link to='/auth/login' className="btn btn-primary p-2 text-sm rounded-md">Login</Link>
                     <Link to='/auth/register' className="btn btn-primary p-2 text-sm rounded-md">Register</Link>
-                </div>}
+                </div>)}
         </div>
         </div>
     );

@@ -18,7 +18,7 @@ const MyPlants = () => {
 
     
     return (
-        <div>
+        <div className='mx-4'>
             <div className='text-center space-y-3 my-10'>
                 <h2 className="font-bold text-2xl md:text-3xl">Your Green Space</h2>
                 <p className="font-medium text-base md:text-lg italic">All the plants you've added—tracked, listed and thriving</p>

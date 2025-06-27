@@ -61,7 +61,7 @@ const MyPlant = ({plant,idx,plants,setPlants}) => {
                 <td>{frequency}</td>
                 <th>
                 <div className='flex gap-2'>
-                    <Link to={`/updatePlants/${_id}`}>
+                    <Link to={`/dashboard/updatePlants/${_id}`}>
                     <button className="btn btn-primary btn-sm">Update</button>
                     </Link>
 

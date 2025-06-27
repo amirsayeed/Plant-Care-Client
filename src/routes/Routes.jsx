@@ -14,6 +14,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "../provider/PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import DashboardLayout from "../layouts/DashboardLayout";
 
 export const router = createBrowserRouter([
   {
@@ -28,10 +29,6 @@ export const router = createBrowserRouter([
             Component: Home
         },
         {
-            path: 'addPlant',
-            element: <PrivateRoute><AddPlant/></PrivateRoute>
-        },
-        {
           path: 'plants',
           loader: ()=> fetch('https://plant-care-tracker-server-pied.vercel.app/plants'),
           hydrateFallbackElement: <Loading/>,
@@ -42,17 +39,28 @@ export const router = createBrowserRouter([
           loader: ({params})=> fetch(`https://plant-care-tracker-server-pied.vercel.app/plants/${params.id}`),
           hydrateFallbackElement: <Loading/>,
           element: <PrivateRoute><PlantDetails/></PrivateRoute>
-        },
-        {
+        }
+    ]
+  },
+  {
+    path: '/dashboard',
+    element: <PrivateRoute><DashboardLayout/></PrivateRoute>,
+    children: [
+      {
           path: 'myPlants',
           element: <PrivateRoute><MyPlants/></PrivateRoute>
-        },
-        {
-          path: '/updatePlants/:id',
+      },
+      {
+          path: 'addPlant',
+          element: <PrivateRoute><AddPlant/></PrivateRoute>
+      },
+      
+      {
+          path: 'updatePlants/:id',
           loader: ({params})=> fetch(`https://plant-care-tracker-server-pied.vercel.app/plants/${params.id}`),
           hydrateFallbackElement: <Loading/>,
           Component: UpdatePlant
-        }
+      }
     ]
   },
   {

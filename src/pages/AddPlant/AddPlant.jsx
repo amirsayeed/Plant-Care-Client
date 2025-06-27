@@ -33,7 +33,7 @@ const AddPlant = () => {
 
     return (
         <div>
-            <div className='px-12 md:px-24 my-20'>
+            <div className='px-12 md:px-24 my-10'>
                 <div className='p-12 space-y-4 text-center bg-base-300'>
                     <h3 className="text-2xl md:text-3xl font-semibold">Add New Plant</h3>
                     <p className='text-base md:text-lg font-medium italic'>Every plant has a story — let’s begin yours</p>

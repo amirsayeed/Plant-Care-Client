@@ -20,7 +20,7 @@ const Slider = () => {
 
                 <div className="max-w-md space-y-4 absolute top-10 md:top-1/3 left-12 md:left-20 z-20 text-white drop-shadow-lg pointer-events-none">
                     <h2 className="font-semibold text-2xl md:text-3xl">
-                        <span className='text-yellow-300'>Nurture Your Green Oasis,</span> Indoors & Out
+                        <span className='text-green-400'>Nurture Your Green Oasis,</span> Indoors & Out
                     </h2>
                     <p className='text-sm md:text-base font-medium text-wrap'>
                         Keep track of watering, sunlight and care routines for all your plants—whether it's your cozy indoor fern or your kitchen lemon tree.
@@ -43,7 +43,7 @@ const Slider = () => {
 
                 <div className="max-w-md space-y-4 absolute top-10 md:top-1/3 left-12 md:left-20 z-20 text-white drop-shadow-lg pointer-events-none">
                     <h2 className="font-semibold text-2xl md:text-3xl">
-                        <span className='text-yellow-300'>Bring Color to Life, One Pot at a Time</span>, Indoors & Out
+                        <span className='text-green-400'>Bring Color to Life, One Pot at a Time</span>, Indoors & Out
                     </h2>
                     <p className='text-sm md:text-base font-medium text-wrap'>
                         Track blooming cycles, seasonal tips, and container-friendly care for your vibrant patio plants.
@@ -66,7 +66,7 @@ const Slider = () => {
 
                 <div className="max-w-md space-y-4 absolute top-10 md:top-1/3 left-12 md:left-20 z-20 text-white drop-shadow-lg pointer-events-none">
                     <h2 className="font-semibold text-2xl md:text-3xl">
-                        <span className='text-yellow-400'>Smart Care for Your</span> Modern Garden
+                        <span className='text-green-400'>Smart Care for Your</span> Modern Garden
                     </h2>
                     <p className='text-sm md:text-base font-medium text-wrap'>
                         Stay organized with reminders and growth insights for your fruit trees and minimalist planters.
