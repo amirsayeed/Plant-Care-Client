@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../provider/AuthContext';
 
 const UpdatePlant = () => {
-    const {_id,name,image,description,care,category,frequency,status,last,next} = useLoaderData();
+    const {_id,name,image,description,shortDesc,care,category,frequency,status,last,next} = useLoaderData();
     const {user} = use(AuthContext);
     
     const handleUpdatePlant = e =>{
@@ -67,6 +67,10 @@ const UpdatePlant = () => {
                             <fieldset className='fieldset rounded-box p-4'>
                                 <label className="label">Description</label>
                                 <input type="text" name='description' defaultValue={description} className="input w-full" placeholder="Description" />
+                            </fieldset>
+                            <fieldset className='fieldset rounded-box p-4'>
+                                <label className="label">Short Description</label>
+                                <input type="text" name='shortDesc' defaultValue={shortDesc} className="input w-full" placeholder="Give a short description" />
                             </fieldset>
                             <fieldset className='fieldset rounded-box p-4'>
                                 <label className="label">Care Level</label>

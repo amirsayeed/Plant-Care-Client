@@ -62,6 +62,10 @@ const AddPlant = () => {
                                 <input type="text" name='description' className="input w-full" placeholder="Description" />
                             </fieldset>
                             <fieldset className='fieldset rounded-box p-4'>
+                                <label className="label">Short Description</label>
+                                <input type="text" name='shortDesc' className="input w-full" placeholder="Give a short description" />
+                            </fieldset>
+                            <fieldset className='fieldset rounded-box p-4'>
                                 <label className="label">Care Level</label>
                                 <select defaultValue="Select a level" name='care' className="select w-full">
                                     <option disabled={true}>Select a level</option>

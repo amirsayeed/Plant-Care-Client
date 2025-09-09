@@ -1,5 +1,9 @@
 import React from 'react';
-import { Link, Outlet, useLocation } from 'react-router';
+import { NavLink, Outlet, useLocation } from 'react-router';
+import Logo from '../components/Logo/Logo';
+import { FaPlusCircle } from 'react-icons/fa';
+import { GiPlantWatering } from 'react-icons/gi';
+import { MdSpaceDashboard } from 'react-icons/md';
 
 const DashboardLayout = () => {
     const location = useLocation();
@@ -36,8 +40,8 @@ const DashboardLayout = () => {
             {/* Main content */}
             {isDashboardRoot && (
             <div className="p-4">
-                <h2 className="text-2xl font-bold text-green-800">Welcome to Your Plant Dashboard</h2>
-                <p className="text-gray-600 mt-2">
+                <h2 className="text-xl md:text-3xl font-bold text-green-800">Welcome to Your Plant Dashboard!</h2>
+                <p className="text-gray-600 mt-3 text-base md:text-lg">
                 Use the sidebar to manage your plants, track care routines, and view your personalized tips.
                 </p>
             </div>
@@ -47,12 +51,24 @@ const DashboardLayout = () => {
         </div>
         <div className="drawer-side">
             <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-            <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4 gap-2">
+            <ul className="menu bg-base-200 text-base-content min-h-full w-72 p-4 gap-3 text-base">
             {/* Sidebar content here */}
-            <li><Link to='/dashboard'>Dashboard</Link></li>
-            <li><Link to='/dashboard/myPlants'>My Plants</Link></li>
-            <li><Link to='/dashboard/addPlant'>Add a plant</Link></li>
-            <li><Link to='/' className='btn btn-primary w-36 text-sm'>Back to Home</Link></li>
+            <li><Logo/></li>
+            <li>
+                <NavLink to="/dashboard" className="flex items-center gap-2 hover:text-green-600" end>
+                <MdSpaceDashboard /> Dashboard Home
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to="/dashboard/myPlants" className="flex items-center gap-2 hover:text-green-600">
+                <GiPlantWatering /> My Plants
+                </NavLink>
+            </li>
+            <li>
+                <NavLink to="/dashboard/addPlant" className="flex items-center gap-2 hover:text-green-600">
+                <FaPlusCircle /> Add a Plant
+                </NavLink>
+            </li>
             </ul>
         </div>
         </div>

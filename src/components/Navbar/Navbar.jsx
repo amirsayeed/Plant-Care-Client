@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../provider/AuthContext';
 import { FaUserCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import navLogo from '../../assets/logo.png'
+import Logo from '../Logo/Logo';
 
 const Navbar = () => {
     const {user,logOut} = use(AuthContext);
@@ -45,10 +45,7 @@ const Navbar = () => {
             </ul>
             
             </div>
-            <div className='flex gap-1 items-center'>
-                <img className='hidden md:flex w-12 h-10 object-cover' src={navLogo} alt="" />
-                <a className="text-lg md:text-2xl font-bold">Plant Care</a>
-            </div>
+            <Logo/>
         </div>
         <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 text-lg font-medium">
